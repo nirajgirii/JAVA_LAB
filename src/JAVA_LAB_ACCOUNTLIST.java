@@ -1,3 +1,5 @@
+// Database Connectivity , INSERT and SELECT Operations using preparedStatement;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -119,6 +121,12 @@ public class JAVA_LAB_ACCOUNTLIST {
                     }
 
                     accountsTextArea.setText(accountsDetails.toString());
+
+                    resultSet.close();
+                    preparedStatement.close();
+                    connection.close();
+                    System.out.println();
+                    System.out.println("|------------------------------ Connection Closed ------------------------------|");
 
                 } catch (SQLException ex) {
                     ex.printStackTrace();
