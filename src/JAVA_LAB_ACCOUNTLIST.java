@@ -10,8 +10,7 @@ import java.sql.SQLException;
 public class JAVA_LAB_ACCOUNTLIST {
     public static void main(String[] args) {
         String URL = "jdbc:mysql://localhost:3306/ACCOUNTLIST";
-        String USER = "root";
-        String PASSWORD = "He!!0w0rld0672";
+
 
         JFrame mainFrame = new JFrame("Account History");
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -77,7 +76,7 @@ public class JAVA_LAB_ACCOUNTLIST {
                 String accountName = ACCOUNT_NAME.getText();
                 String accountAmount = ACCOUNT_AMOUNT.getText();
 
-                try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD)) {
+                try (Connection connection = DriverManager.getConnection(URL, DATABASE_CONNECTION.usernameDatabase, DATABASE_CONNECTION.passwordDatabase)) {
                     System.out.println("Connection established for insertion!");
 
                     String INSERT_QUERY = "INSERT INTO ACCOUNTS_DETAILS (ACCOUNT_NUMBER, ACCOUNT_NAME, ACCOUNT_AMOUNT) VALUES (?, ?, ?)";
@@ -101,7 +100,7 @@ public class JAVA_LAB_ACCOUNTLIST {
         SHOW_ACCOUNTS_BUTTON.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD)) {
+                try (Connection connection = DriverManager.getConnection(URL, DATABASE_CONNECTION.usernameDatabase, DATABASE_CONNECTION.passwordDatabase)) {
                     System.out.println("Connection established for showing accounts!");
 
                     String SELECT_QUERY = "SELECT * FROM ACCOUNTS_DETAILS";
