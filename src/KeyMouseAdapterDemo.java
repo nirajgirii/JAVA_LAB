@@ -1,19 +1,22 @@
+// WAP a java code for both Mouse and Key listener.
+// 1. If a user enter the certain area print "Mouse Entered".
+// 2. Perform all KeyListener functions.
+
+// --NOTE-- Check Console for keyTyped, keyPressed, keyReleased.
+
 import javax.swing.*;
 import java.awt.event.*;
 
 public class KeyMouseAdapterDemo {
     public static void main(String[] args) {
-        // Create a new frame
         JFrame frame = new JFrame("Key and Mouse Adapter Demo");
         frame.setSize(400, 300);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(null);
 
-        // Create a text area
         JTextArea textArea = new JTextArea();
         textArea.setBounds(50, 50, 300, 100);
 
-        // Add a key listener to the text area
         textArea.addKeyListener(new KeyAdapter() {
             @Override
             public void keyTyped(KeyEvent e) {
@@ -34,11 +37,9 @@ public class KeyMouseAdapterDemo {
             }
         });
 
-        // Create a label
         JLabel label = new JLabel("Hover over me!");
         label.setBounds(50, 200, 200, 30);
 
-        // Add a mouse listener to the label
         label.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -66,11 +67,9 @@ public class KeyMouseAdapterDemo {
             }
         });
 
-        // Add components to the frame
         frame.getContentPane().add(textArea);
         frame.getContentPane().add(label);
 
-        // Set the frame visibility to true
         frame.setVisible(true);
     }
 }
