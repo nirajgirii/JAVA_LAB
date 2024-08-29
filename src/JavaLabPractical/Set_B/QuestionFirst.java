@@ -46,13 +46,8 @@ public class QuestionFirst {
                 super.mouseReleased(e);
                 int factorialValue = Integer.parseInt(enterNumberTextField.getText());
                 outputLabel.setText(String.valueOf((factorialValue * factorialValue)));
-
             }
         });
-
-
-
-
         frame.setVisible(true);
     }
 }

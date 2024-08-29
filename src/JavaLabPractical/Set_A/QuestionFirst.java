@@ -44,7 +44,6 @@ public class QuestionFirst {
                 }
             }
         });
-
         frame.setVisible(true);
     }
 }

@@ -20,9 +20,7 @@ public class Server extends UnicastRemoteObject implements RmiServerInterfaceLab
         try {
             LocateRegistry.createRegistry(1099);
             System.out.println("RMI registry started.");
-
             Server server = new Server();
-
             Naming.rebind("rmi://localhost/Server", server);
             System.out.println("Server is ready.");
 
